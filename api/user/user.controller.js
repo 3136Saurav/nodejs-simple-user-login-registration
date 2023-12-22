@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 
 module.exports = {
   createUser: async (req, res, next) => {
+    console.log("Sign Up Request");
     try {
       const { email, password } = req.body;
       if (!email || !password)
@@ -31,6 +32,7 @@ module.exports = {
   },
 
   loginUser: async (req, res, next) => {
+    console.log("Login Request");
     try {
       const { email, password } = req.body;
       if (!email || !password)

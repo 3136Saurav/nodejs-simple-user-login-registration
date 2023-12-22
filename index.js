@@ -3,6 +3,7 @@ const PORT = 8550;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const cors = require("cors");
 require("dotenv").config();
 
 const userRouter = require("./api/user/user.router");
@@ -10,6 +11,7 @@ const userRouter = require("./api/user/user.router");
 const dbUrl = `mongodb+srv://root:${process.env.DB_PASSWORD}@learning-cluster.ddw5br4.mongodb.net/?retryWrites=true&w=majority`;
 
 app.use(express.json());
+app.use(cors());
 
 app.use("/api/user", userRouter);
 
